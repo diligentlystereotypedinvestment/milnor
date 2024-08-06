@@ -1,0 +1,194 @@
+% root = book.tex
+\usepackage{mathrsfs,comment}
+\usepackage[usenames,dvipsnames]{color}
+% \usepackage[normalem]{ulem}
+\usepackage{url}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath, amssymb,amsthm, mathtools}
+
+\usepackage{bm}
+% \usepackage{mathpazo}
+% \usepackage{euler}
+
+% \usepackage[all,arc,2cell]{xy}
+% \UseAllTwocells
+\usepackage{enumerate}
+\usepackage{graphicx}
+% \usepackage{tikz-cd}
+
+%%% hyperref stuff is taken from AGT style file
+\usepackage{hyperref}
+% \hypersetup{%
+%   bookmarksnumbered=true,%
+%   bookmarks=true,%
+%   colorlinks=true,%
+%   linkcolor=blue,%
+%   citecolor=blue,%
+%   filecolor=blue,%
+%   menucolor=blue,%
+%   pagecolor=blue,%
+%   urlcolor=blue,%
+%   pdfnewwindow=true,%
+%   pdfstartview=FitBH}
+
+\let\fullref\autoref
+\def\makeautorefname#1#2{\expandafter\def\csname#1autorefname\endcsname{#2}}
+%
+%  Some standard autorefnames.  If the environment name for an autoref
+%  you need is not listed below, add a similar line to your TeX file:
+%
+%\makeautorefname{equation}{Equation}%
+\def\equationautorefname~#1\null{(#1)\null}
+% \makeautorefname{footnote}{footnote}%
+\makeautorefname{item}{item}%
+\makeautorefname{figure}{Figure}%
+\makeautorefname{table}{Table}%
+\makeautorefname{part}{Part}%
+\makeautorefname{appendix}{Appendix}%
+\makeautorefname{chapter}{Chapter}%
+\makeautorefname{section}{Section}%
+\makeautorefname{subsection}{Section}%
+\makeautorefname{subsubsection}{Section}%
+\makeautorefname{theorem}{Theorem}%
+\makeautorefname{thm}{Theorem}%
+\makeautorefname{cor}{Corollary}%
+\makeautorefname{lem}{Lemma}%
+\makeautorefname{prop}{Proposition}%
+\makeautorefname{pro}{Property}
+\makeautorefname{conj}{Conjecture}%
+\makeautorefname{defn}{Definition}%
+% \makeautorefname{notn}{Notation}
+% \makeautorefname{notns}{Notations}
+\makeautorefname{rem}{Remark}%
+\makeautorefname{quest}{Question}%
+\makeautorefname{exmp}{Example}%
+% \makeautorefname{ax}{Axiom}%
+\makeautorefname{claim}{Claim}%
+% \makeautorefname{ass}{Assumption}%
+% \makeautorefname{asss}{Assumptions}%
+% \makeautorefname{con}{Construction}%
+% \makeautorefname{prob}{Problem}%
+% \makeautorefname{warn}{Warning}%
+\makeautorefname{obs}{Observation}%
+% \makeautorefname{conv}{Convention}%
+%
+%                  *** End of hyperref stuff ***
+
+% \def\th@spplain{%
+%   \let\thm@indent\relax
+%   \thm@headfont{\bfseries}% heading font bold face
+%   \let\thmhead\thmhead@plain \let\swappedhead\swappedhead@plain
+%   \thm@preskip.5\baselineskip\@plus.2\baselineskip
+%                                     \@minus.2\baselineskip
+%   \thm@postskip\thm@preskip
+%   \normalfont
+% }
+% \theoremstyle{spplain}
+
+% \newcounter{Theorem}
+% \numberwithin{Theorem}{chapter}
+
+\newtheorem{thm}{Theorem}[chapter]
+\newtheorem{cor}{Corollary}[chapter]
+\newtheorem{prop}{Proposition}[chapter]
+\newtheorem{lem}{Lemma}[chapter]
+\newtheorem{prob}{Problem}[chapter]
+\newtheorem{conj}{Conjecture}[chapter]
+%\newtheorem{ass}{Assumption}[section]
+%\newtheorem{asses}{Assumptions}[section]
+\renewcommand{\thethm}{\thechapter.\arabic{thm}}
+\newcounter{def}      
+
+\theoremstyle{definition}
+\newtheorem{defn}[def]{Definition}
+% \newtheorem{ass}{Assumption}[section]
+% \newtheorem{asss}{Assumptions}[section]
+% \newtheorem{ax}{Axiom}[section]
+% \newtheorem{con}{Construction}[section]
+\newtheorem{exmp}{Example}[chapter]
+% \newtheorem{notn}{Notation}[section]
+% \newtheorem{notns}{Notations}[section]
+\newtheorem{pro}{Property}[chapter]
+\newtheorem{quest}{Question}[chapter]
+% \newtheorem{exercise}{Exercise}[subsection]
+\newtheorem{rem*}{Remark}
+\newtheorem{rem}{Remark}[chapter]
+% \newtheorem{warn}{Warning}[section]
+% \newtheorem{sch}{Scholium}[section]
+\newtheorem{obs}[def]{Observation}
+% \newtheorem{conv}{Convention}[section]
+ 
+%%%% hack to get fullref working correctly
+\makeatletter
+\let\c@obs=\c@thm
+\let\c@cor=\c@thm
+\let\c@prop=\c@thm
+\let\c@lem=\c@thm
+\let\c@prob=\c@thm
+\let\c@con=\c@thm
+\let\c@conj=\c@thm
+\let\c@defn=\c@thm
+\let\c@notn=\c@thm
+\let\c@notns=\c@thm
+\let\c@exmp=\c@thm
+\let\c@ax=\c@thm
+\let\c@pro=\c@thm
+\let\c@ass=\c@thm
+\let\c@warn=\c@thm
+\let\c@rem=\c@thm
+\let\c@sch=\c@thm
+\let\c@equation\c@thm
+\numberwithin{equation}{section}
+\makeatother
+
+\newcommand{\Z}{\bm{Z}}
+\newcommand{\A}{\bm{A}}
+\newcommand{\F}{\bm{F}}
+\newcommand{\Q}{\bm{Q}}
+\newcommand{\R}{\bm{R}}
+\newcommand{\C}{\bm{C}}
+\newcommand{\N}{\bm{N}}
+\newcommand{\SL}{\text{SL}}
+\newcommand{\GL}{\text{GL}}
+\newcommand{\Id}{\text{Id}}
+\newcommand{\Gr}{\text{Gr}}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\Gal}{Gal}
+\DeclareMathOperator{\Lie}{Lie}
+\DeclareMathOperator{\PGL}{PGL}
+\DeclareMathOperator{\Wedge}{\bigwedge}
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\sgn}{sgn}
+\renewcommand{\S}{\mathbb{S}}
+\renewcommand{\char}{\text{char}}
+\DeclareMathOperator{\im}{im}
+\renewcommand{\P}{\mathbb{P}}
+\DeclareMathOperator*{\colim}{colim}
+\DeclareMathOperator*{\rank}{rank}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Mor}{Mor}
+\DeclareMathOperator{\Spec}{Spec}
+\DeclareMathOperator{\Supp}{Supp}
+\newcommand{\CPn}{\C P^n}
+\newcommand{\CP}{\C P}
+\newcommand{\RPn}{\R P^n}
+\newcommand{\RP}{\R P}
+\newcommand{\MyTo}[1]{\mathbin{\,\tikz[baseline] \draw[-stealth,line width=.4pt] (0ex,0.4ex) -- (#1,0.4ex);}}
+\newcommand{\Dlim}{%
+    \mathchoice
+      {\lim_{\MyTo{3.0ex}}}% \displaystyle
+      {\lim_{\MyTo{2.5ex}}}% \textstyle
+      {\lim_{\MyTo{2.0ex}}}% \scriptstyle
+      {\lim_{\MyTo{2.0ex}}}% \scriptscriptstyle
+}
+\DeclareMathOperator{\Tor}{Tor}
+\DeclareMathOperator{\height}{height}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\coker}{coker}
+\DeclareMathOperator{\Max}{Max}
+\DeclareMathOperator{\Pic}{Pic}

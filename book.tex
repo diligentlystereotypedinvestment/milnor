@@ -1,0 +1,43 @@
+% \documentclass[openany, amssymb]{amsbook}
+\documentclass{memoir}
+\input{preamble}
+\usepackage[backend=biber]{biblatex}
+\usepackage{enumerate}
+\usepackage{microtype}
+% \bibliography{bib.bib}
+\addbibresource{bib.bib}
+\newtheorem{exercise}{Exercise}[section]
+\usepackage{tikz-cd}
+
+\makeatletter
+\def\maketitle{%
+  \null
+  \thispagestyle{empty}%
+  \vfill
+  \begin{center}\leavevmode
+    \normalfont
+    {\LARGE\raggedleft \@author\par}%
+    \hrulefill\par
+    {\huge\raggedright \@title\par}%
+    \vskip 1cm
+%    {\Large \@date\par}%
+  \end{center}%
+  \vfill
+  \null
+  \cleardoublepage
+  }
+\makeatother
+\title{Introduction to Algebraic $K $-Theory}
+\author{John Milnor}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+% \input{preface.tex}
+
+\input{chapter1.tex}
+
+\end{document}
